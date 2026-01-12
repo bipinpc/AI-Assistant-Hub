@@ -1,4 +1,4 @@
-import { Building2, Computer, Landmark, Plane, Stethoscope, ArrowRight, Sparkles, CheckCircle2, User, LogOut } from 'lucide-react';
+import { Building2, Bot, Landmark, Plane, Stethoscope, ArrowRight, Sparkles, CheckCircle2, User, LogOut } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -15,7 +15,7 @@ const domains = [
     id: 'insurance' as DomainId,
     name: 'Insurance Claims',
     description: 'File and manage insurance claims with AI-powered assistance',
-    icon: Building2,
+    icon: Bot,
     theme: 'blue-theme',
     version: "1.0.0",
     active: true,
@@ -233,7 +233,7 @@ export function DomainSelector({ onSelectDomain }: DomainSelectorProps) {
                   
                   <CardContent className="space-y-2 sm:space-y-3">
                     {/* Features List */}
-                    <div className="space-y-1 sm:space-y-1.5 h-[120px] overflow-auto">
+                    <div className="space-y-1 sm:space-y-1.5 h-[115px] overflow-auto">
                       {domain.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
                           <CheckCircle2 className={`h-3 w-3 sm:h-3.5 sm:w-3.5 flex-shrink-0 ${theme.text} ${theme.textDark}`} />
@@ -247,7 +247,7 @@ export function DomainSelector({ onSelectDomain }: DomainSelectorProps) {
                       <div className={`text-sm sm:text-base font-semibold ${theme.text} ${theme.textDark}`}>
                         {domain.statLabel}
                       </div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">
+                      <div className="text-xs text-gray-600 dark:text-gray-400 truncate">
                         {domain.statValue}
                       </div>
                     </div>
