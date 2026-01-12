@@ -20,6 +20,7 @@ const domains = [
     version: "1.0.0",
     active: true,
     author: "Insurance Claims Solutions",
+    poweredBy: 'OpenAI',
     license: "MIT",
     dependencies: {
         "some-insurance-api-client": "^2.3.4",
@@ -40,6 +41,7 @@ const domains = [
     version: "1.0.0",
     active: true,
     author: "Fintech Solutions",
+    poweredBy: 'OpenAI',
     license: "MIT",
     dependencies: {
         "some-banking-api-client": "^2.3.4",
@@ -59,6 +61,7 @@ const domains = [
     version: "1.0.0",
     active: true,
     author: "Travel Booking Inc.",
+    poweredBy: 'OpenAI',
     license: "MIT",
     dependencies: {
         "some-travel-api-client": "^2.3.4",
@@ -78,6 +81,7 @@ const domains = [
     version: "1.0.0",
     active: true,
     author: "Healthcare Solutions",
+    poweredBy: 'OpenAI',
     license: "MIT",
     dependencies: {
         "some-healthcare-api-client": "^2.3.4",
@@ -196,8 +200,8 @@ export function DomainSelector({ onSelectDomain }: DomainSelectorProps) {
       </div>
 
       {/* Domain Cards Grid */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        <div className="mb-4 sm:mb-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+        <div className="mb-2 sm:mb-3">
           <h2 className="mb-1 text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">Choose Your Assistant</h2>
           <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Select the service that best matches your needs</p>
         </div>
@@ -260,6 +264,19 @@ export function DomainSelector({ onSelectDomain }: DomainSelectorProps) {
                       Start Conversation
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
+                     <div className="pt-1.5 border-t border-gray-200 dark:border-white/10">
+                      <div className="flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-2 text-center">
+                        <div className="flex items-center gap-1.5 text-[10px]">
+                          <span className="text-gray-500 dark:text-gray-500">Powered by:</span>
+                          <span className="font-semibold text-gray-700 dark:text-gray-300">{domain.poweredBy}</span>
+                        </div>
+                        <span className="hidden sm:inline text-gray-400 dark:text-gray-600 text-[10px]">•</span>
+                        <div className="flex items-center gap-1.5 text-[10px]">
+                          <span className="text-gray-500 dark:text-gray-500">Author:</span>
+                          <span className="font-semibold text-gray-700 dark:text-gray-300">{domain.author}</span>
+                        </div>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
